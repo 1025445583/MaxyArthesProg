@@ -9,8 +9,12 @@ class Car:
     model = 1  # Speeding the car must use in tabSpeed.
     car = pygame.image.load(os.path.join('Images', 'car.png'))
 
-    def _init_(self, name):
-        self.name = name
+    def _init_(self, positionCarX, SpeedMoveCar,tabSpeed, model, car):
+        self.positionCarX = positionCarX
+        self.SpeedMoveCar = SpeedMoveCar
+        self.tabSpeed = tabSpeed
+        self.model = model
+        self.car = car
 
     def RandomSpeedCar(self):
         if self.model == 1:

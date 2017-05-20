@@ -10,11 +10,15 @@ class Player:
     moveCharacterX = 0  # Speed when moving left or right.
     heightJump = 150  # Height that the character gonna jump.
     character = pygame.image.load(os.path.join('Images', 'characterStand.png'))
-    screen = pygame.display.set_mode((640, 480), 0, 32)
 
-    def _init_(self, name):
-        self.name = name
-        self.screen.blit(self.character, (self.positionCharacterX, self.positionCharacterY))
+    def _init_(self, positionCharacterX, positionCharacterY, speedCharacter, moveCharacterY, moveCharacterX, heightJump, character):
+        self.positionCharacterX = positionCharacterX
+        self.positionCharacterY = positionCharacterY
+        self.speedCharacter = speedCharacter
+        self.moveCharacterY = moveCharacterY
+        self.moveCharacterX = moveCharacterX
+        self.heightJump = heightJump
+        self.character = character
 
     def JumpCharacter(self):
         if self.positionCharacterY < self.heightJump and self.moveCharacterY == 0.20:  # Avoid double jump.
